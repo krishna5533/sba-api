@@ -57,7 +57,7 @@ spec:
             name: elastic-apm-agent          
           env:
             - name: spring.datasource.url
-	      value: jdbc:postgresql://postgres:5432/smartbankapp	
+	      value: jdbc:postgresql://postgres:5432/smartbankapp
             - name: spring.application.name
               value: sba-services-kkk
             - name: server.port
