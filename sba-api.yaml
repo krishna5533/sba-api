@@ -1,8 +1,8 @@
-# 2 - weather services
+# 2 - sba services
 apiVersion: v1
 kind: Service
 metadata:
-  name: sba-api
+  name: sba-services
   # namespace: sba
 spec:
   type: ClusterIP
@@ -19,8 +19,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: sba-services-kkk
-  name: sba-services-kkk
+    app: sba-services
+  name: sba-services
   # namespace: sba
 spec:
   replicas: 1
@@ -57,7 +57,7 @@ spec:
             name: elastic-apm-agent          
           env:
             - name: spring.datasource.url
-	      value: jdbc:postgresql://postgres:5432/smartbankapp
+              value: jdbc:postgresql://postgres:5432/smartbankapp
             - name: spring.application.name
               value: sba-services-kkk
             - name: server.port
@@ -87,6 +87,6 @@ spec:
             - name: management.metrics.web.server.request.autotime.enabled
               value: "true"
             - name: management.metrics.tags.application
-              value: sba-services-kkk      
+              value: sba-services-kkk        
           ports:
             - containerPort: 8080
